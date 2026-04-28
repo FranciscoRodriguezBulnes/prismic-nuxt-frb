@@ -14,8 +14,6 @@ useHead({
 
 <template>
   <main>
-    <!-- <div class="text-green-600 text-xl font-bold">Tailwind funciona</div> -->
-
     <SliceZone :slices="page?.data.slices ?? []" :components="components" />
   </main>
 </template>
