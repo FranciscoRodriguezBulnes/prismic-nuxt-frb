@@ -14,9 +14,9 @@ defineProps(getSliceComponentProps<Content.RichTextSlice>());
 section {
   max-width: 600px;
   margin: 6em auto;
-  font-family:
+  /* font-family:
     -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial,
-    sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; */
 }
 
 section:deep(.codespan) {

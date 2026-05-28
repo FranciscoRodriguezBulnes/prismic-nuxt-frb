@@ -1,0 +1,19 @@
+{
+  "files.associations": {
+    "*.css": "tailwindcss"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.formatOnSave": true,
+
+  "task.autoDetect": "on",
+  "tasks.runOnFolderOpen": "default",
+
+  "terminal.integrated.enablePersistentSessions": false,
+  "terminal.integrated.restorePersistentSessions": "never",
+  "terminal.integrated.defaultLocation": "editor",
+
+  "workbench.editor.restoreViewState": false,
+  "workbench.editor.restoreEditors": false
+}

@@ -5,13 +5,15 @@
   "license": "Apache-2.0",
   "author": "Prismic <contact@prismic.io> (https://prismic.io)",
   "scripts": {
-    "dev": "concurrently \"npm:nuxt:dev\" \"npm:slicemachine\" --names \"nuxt,slicemachine\" --prefix-colors green,magenta",
+    "dev": "concurrently --raw \"npm:nuxt:dev\" \"npm:slicemachine\" \"npm:open:nuxt\" \"npm:open:slice\" --names \"nuxt,slicemachine,open1,open2\" --prefix-colors green,magenta,blue,yellow",
     "nuxt:dev": "nuxt dev",
+    "slicemachine": "start-slicemachine",
+    "open:nuxt": "start http://localhost:3000",
+    "open:slice": "start http://localhost:9999",
     "build": "nuxt build",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "slicemachine": "start-slicemachine",
     "lint": "eslint ."
   },
   "devDependencies": {

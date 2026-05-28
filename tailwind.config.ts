@@ -9,4 +9,12 @@ export default <Partial<Config>>{
     "./app.vue",
     "./app/**/*.{vue,js,ts}",
   ],
+
+  theme: {
+    extend: {
+      fontFamily: {
+        melon: ['"Melon Camp"', "sans-serif"],
+      },
+    },
+  },
 };

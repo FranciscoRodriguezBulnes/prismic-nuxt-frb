@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .card {
+@apply w-[300px] h-[350px] perspective-1000;
+  }
+
+  .card-inner {
+    @apply relative w-full h-full transition-transform duration-700;
+    transform-style: preserve-3d;
+  }
+
+  .card:hover .card-inner {
+    transform: rotateY(180deg);
+  }
+
+  .card-face {
+    @apply absolute w-full h-full backface-hidden rounded-xl overflow-hidden;
+  }
+
+  .card-front {
+    @apply shadow-xl;
+    transform: rotateY(0deg);
+  }
+
+  .card-back {
+    @apply flex flex-col items-center justify-center text-center p-6 bg-slate-900 text-white shadow-xl;
+    transform: rotateY(180deg);
+  }
+}
+
+@layer utilities {
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+    .backface-hidden {
+    backface-visibility: hidden;
+  }
+    .transform-style-preserve-3d {
+    transform-style: preserve-3d;
+  }
+  .rotate-y-180 {
+  transform: rotateY(180deg);
+}
+}
+
