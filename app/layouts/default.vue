@@ -3,6 +3,7 @@ import { asImageSrc } from "@prismicio/helpers";
 import AppHeader from "~/components/AppHeader.vue";
 
 const prismic = usePrismic();
+
 const { data: settings } = await useAsyncData(() =>
   prismic.client.getSingle("settings"),
 );

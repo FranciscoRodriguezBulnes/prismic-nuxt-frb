@@ -4,7 +4,11 @@ import type { Content } from "@prismicio/client";
 defineProps<{
   settings?: Content.SettingsDocument;
 }>();
+
+// 1. Añadimos la función para que los botones vuelvan a rebotar aquí
+const { jellyEffect } = useJelly();
 </script>
+
 <template>
   <footer class="p-4 md:p-6">
     <nav
@@ -18,9 +22,12 @@ defineProps<{
 
       <ul class="flex gap-6">
         <template v-for="link in settings?.data.navigation" :key="link.key">
+          <!-- 2. Añadimos :class y @click.native para mantener la coherencia visual -->
           <PrismicLink
             :field="link"
+            :class="{ buttonLink: link.variant === 'Button' }"
             class="inline-flex min-h-11 items-center"
+            @click.native="link.variant === 'Button' && jellyEffect($event)"
           />
         </template>
       </ul>
