@@ -1,0 +1,340 @@
+[
+  {
+    "__TYPE__": "SharedSliceContent",
+    "variation": "default",
+    "primary": {
+      "heading": {
+        "__TYPE__": "StructuredTextContent",
+        "value": [
+          {
+            "type": "heading2",
+            "content": {
+              "text": "The new\nGlide Standard",
+              "spans": [
+                {
+                  "type": "em",
+                  "start": 8,
+                  "end": 22
+                }
+              ]
+            },
+            "direction": "ltr"
+          }
+        ]
+      },
+      "body": {
+        "__TYPE__": "StructuredTextContent",
+        "value": [
+          {
+            "type": "paragraph",
+            "content": {
+              "text": "Amet pariatur Lorem voluptate occaecat eiusmod sit exercitation in amet enim duis id."
+            }
+          }
+        ]
+      },
+      "bento": {
+        "__TYPE__": "GroupContentType",
+        "value": [
+          {
+            "__TYPE__": "GroupItemContent",
+            "value": [
+              [
+                "title",
+                {
+                  "__TYPE__": "StructuredTextContent",
+                  "value": [
+                    {
+                      "type": "heading3",
+                      "content": {
+                        "text": "Design Principles",
+                        "spans": []
+                      },
+                      "direction": "ltr"
+                    }
+                  ]
+                }
+              ],
+              [
+                "body",
+                {
+                  "__TYPE__": "StructuredTextContent",
+                  "value": [
+                    {
+                      "type": "paragraph",
+                      "content": {
+                        "text": "Our features power your next big design, whether it’s a website or an app, Glisten is your friend.",
+                        "spans": []
+                      },
+                      "direction": "ltr"
+                    }
+                  ]
+                }
+              ],
+              [
+                "image",
+                {
+                  "__TYPE__": "ImageContent",
+                  "provider": "imgix",
+                  "url": "https://images.unsplash.com/photo-1517976487492-5750f3195933?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwyfHxjb2hldGV8ZW58MHx8fHwxNzgwOTcxODc2fDA&ixlib=rb-4.1.0&q=85",
+                  "alt": "gray spacecraft taking off during daytime",
+                  "origin": {
+                    "id": "OHOU-5UVIYQ",
+                    "url": "https://images.unsplash.com/photo-1517976487492-5750f3195933?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwyfHxjb2hldGV8ZW58MHx8fHwxNzgwOTcxODc2fDA&ixlib=rb-4.1.0&q=85",
+                    "width": 3000,
+                    "height": 2000
+                  },
+                  "width": 3000,
+                  "height": 2000,
+                  "edit": {
+                    "background": "transparent",
+                    "zoom": 1,
+                    "crop": { "x": 0, "y": 0 }
+                  },
+                  "thumbnails": {}
+                }
+              ],
+              [
+                "is_wide",
+                {
+                  "__TYPE__": "BooleanContent",
+                  "value": true
+                }
+              ],
+              [
+                "label",
+                {
+                  "__TYPE__": "KeyTextContent",
+                  "value": "Design Principles"
+                }
+              ]
+            ]
+          },
+          {
+            "__TYPE__": "GroupItemContent",
+            "value": [
+              [
+                "is_wide",
+                {
+                  "__TYPE__": "BooleanContent",
+                  "value": false
+                }
+              ],
+              [
+                "title",
+                {
+                  "__TYPE__": "StructuredTextContent",
+                  "value": [
+                    {
+                      "type": "heading3",
+                      "content": {
+                        "text": "Benchmark with AI",
+                        "spans": []
+                      },
+                      "direction": "ltr"
+                    }
+                  ]
+                }
+              ],
+              [
+                "body",
+                {
+                  "__TYPE__": "StructuredTextContent",
+                  "value": [
+                    {
+                      "type": "paragraph",
+                      "content": {
+                        "text": "Never worry about pixel perfection again, thanks to our patented AI critic, telling you when something is misaligned.",
+                        "spans": []
+                      },
+                      "direction": "ltr"
+                    }
+                  ]
+                }
+              ],
+              [
+                "image",
+                {
+                  "__TYPE__": "ImageContent",
+                  "provider": "imgix",
+                  "url": "https://images.unsplash.com/photo-1541185933-ef5d8ed016c2?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwxMXx8Y29oZXRlfGVufDB8fHx8MTc4MDk3MTg3Nnww&ixlib=rb-4.1.0&q=85",
+                  "alt": "rocket ship launching during daytime",
+                  "origin": {
+                    "id": "Ptd-iTdrCJM",
+                    "url": "https://images.unsplash.com/photo-1541185933-ef5d8ed016c2?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwxMXx8Y29oZXRlfGVufDB8fHx8MTc4MDk3MTg3Nnww&ixlib=rb-4.1.0&q=85",
+                    "width": 3000,
+                    "height": 2000
+                  },
+                  "width": 3000,
+                  "height": 2000,
+                  "edit": {
+                    "background": "transparent",
+                    "zoom": 1,
+                    "crop": { "x": 0, "y": 0 }
+                  },
+                  "thumbnails": {}
+                }
+              ],
+              [
+                "label",
+                {
+                  "__TYPE__": "KeyTextContent",
+                  "value": "Benchmark with AI"
+                }
+              ]
+            ]
+          },
+          {
+            "__TYPE__": "GroupItemContent",
+            "value": [
+              [
+                "is_wide",
+                {
+                  "__TYPE__": "BooleanContent",
+                  "value": false
+                }
+              ],
+              [
+                "title",
+                {
+                  "__TYPE__": "StructuredTextContent",
+                  "value": [
+                    {
+                      "type": "heading3",
+                      "content": {
+                        "text": "Aesthetic Excellence",
+                        "spans": []
+                      },
+                      "direction": "ltr"
+                    }
+                  ]
+                }
+              ],
+              [
+                "body",
+                {
+                  "__TYPE__": "StructuredTextContent",
+                  "value": [
+                    {
+                      "type": "paragraph",
+                      "content": {
+                        "text": "Never worry about pixel perfection again, thanks to our patented AI critic, telling you when something is misaligned.",
+                        "spans": []
+                      },
+                      "direction": "ltr"
+                    }
+                  ]
+                }
+              ],
+              [
+                "image",
+                {
+                  "__TYPE__": "ImageContent",
+                  "provider": "imgix",
+                  "url": "https://images.unsplash.com/photo-1614728263952-84ea256f9679?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwzfHxjb2hldGV8ZW58MHx8fHwxNzgwOTcxODc2fDA&ixlib=rb-4.1.0&q=85",
+                  "alt": "Space Shuttle Challenger launches from Kennedy Space Center",
+                  "origin": {
+                    "id": "dCgbRAQmTQA",
+                    "url": "https://images.unsplash.com/photo-1614728263952-84ea256f9679?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwzfHxjb2hldGV8ZW58MHx8fHwxNzgwOTcxODc2fDA&ixlib=rb-4.1.0&q=85",
+                    "width": 6097,
+                    "height": 3510
+                  },
+                  "width": 6097,
+                  "height": 3510,
+                  "edit": {
+                    "background": "transparent",
+                    "zoom": 1,
+                    "crop": { "x": 0, "y": 0 }
+                  },
+                  "thumbnails": {}
+                }
+              ],
+              [
+                "label",
+                {
+                  "__TYPE__": "KeyTextContent",
+                  "value": "Aesthetic Excellence"
+                }
+              ]
+            ]
+          },
+          {
+            "__TYPE__": "GroupItemContent",
+            "value": [
+              [
+                "is_wide",
+                {
+                  "__TYPE__": "BooleanContent",
+                  "value": true
+                }
+              ],
+              [
+                "title",
+                {
+                  "__TYPE__": "StructuredTextContent",
+                  "value": [
+                    {
+                      "type": "heading3",
+                      "content": {
+                        "text": "Benchmark with AI (2)",
+                        "spans": []
+                      },
+                      "direction": "ltr"
+                    }
+                  ]
+                }
+              ],
+              [
+                "body",
+                {
+                  "__TYPE__": "StructuredTextContent",
+                  "value": [
+                    {
+                      "type": "paragraph",
+                      "content": {
+                        "text": "Our features power your next big design, whether it’s a website or an app, Glisten is your friend.",
+                        "spans": []
+                      },
+                      "direction": "ltr"
+                    }
+                  ]
+                }
+              ],
+              [
+                "image",
+                {
+                  "__TYPE__": "ImageContent",
+                  "provider": "imgix",
+                  "url": "https://images.unsplash.com/photo-1635349874005-40f0847e9b6f?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwxNXx8Y29oZXRlfGVufDB8fHx8MTc4MDk3MTg3Nnww&ixlib=rb-4.1.0&q=85",
+                  "alt": "a couple of rockets sitting next to each other",
+                  "origin": {
+                    "id": "AQqVrGosQz8",
+                    "url": "https://images.unsplash.com/photo-1635349874005-40f0847e9b6f?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwxNXx8Y29oZXRlfGVufDB8fHx8MTc4MDk3MTg3Nnww&ixlib=rb-4.1.0&q=85",
+                    "width": 3000,
+                    "height": 2006
+                  },
+                  "width": 3000,
+                  "height": 2006,
+                  "edit": {
+                    "background": "transparent",
+                    "zoom": 1,
+                    "crop": { "x": 0, "y": 0 }
+                  },
+                  "thumbnails": {}
+                }
+              ],
+              [
+                "label",
+                {
+                  "__TYPE__": "KeyTextContent",
+                  "value": "Benchmark with AI (2)"
+                }
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    "items": []
+  }
+]
