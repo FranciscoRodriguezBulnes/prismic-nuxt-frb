@@ -1,83 +1,6 @@
 [
 	{
 		"__TYPE__": "SharedSliceContent",
-		"variation": "default",
-		"primary": {
-			"heading": {
-				"__TYPE__": "StructuredTextContent",
-				"value": [
-					{
-						"type": "heading2",
-						"content": {
-							"text": "Pocket"
-						}
-					}
-				]
-			},
-			"image": {
-				"origin": {
-					"id": "main",
-					"url": "https://images.unsplash.com/photo-1551739440-5dd934d3a94a",
-					"width": 3456,
-					"height": 4320
-				},
-				"url": "https://images.unsplash.com/photo-1551739440-5dd934d3a94a",
-				"width": 3456,
-				"height": 4320,
-				"edit": {
-					"zoom": 1,
-					"crop": {
-						"x": 0,
-						"y": 0
-					},
-					"background": "transparent"
-				},
-				"alt": "hit",
-				"credits": null,
-				"__TYPE__": "ImageContent",
-				"thumbnails": {}
-			},
-			"icon": {
-				"__TYPE__": "FieldContent",
-				"value": "ph:aperture",
-				"type": "Select"
-			},
-			"subheading": {
-				"__TYPE__": "StructuredTextContent",
-				"value": [
-					{
-						"type": "heading3",
-						"content": {
-							"text": "Character"
-						}
-					}
-				]
-			},
-			"body": {
-				"__TYPE__": "StructuredTextContent",
-				"value": [
-					{
-						"type": "paragraph",
-						"content": {
-							"text": "Fugiat et nostrud ullamco aute esse sunt do. Dolore sit laborum consectetur sint aute ipsum dolore. Veniam proident culpa ad."
-						}
-					}
-				]
-			},
-			"cta": {
-				"key": "0f2e6b3c-8074-45b2-84ae-f8f78a2fdc68",
-				"__TYPE__": "LinkContent",
-				"value": {
-					"__TYPE__": "ExternalLink",
-					"url": "http://twitter.com",
-					"text": "atmosphere"
-				}
-			}
-		},
-		"items": []
-	},
-	{
-		"__TYPE__": "SharedSliceContent",
 		"variation": "reversed",
 		"primary": {
 			"heading": {
@@ -157,5 +80,84 @@
 				"value": []
 			}
 		]
+	},
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"heading": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading2",
+						"content": {
+							"text": "Your Glide.\nYour workflow.",
+							"spans": []
+						},
+						"direction": "ltr"
+					}
+				]
+			},
+			"image": {
+				"origin": {
+					"id": "main",
+					"url": "https://images.unsplash.com/photo-1551739440-5dd934d3a94a",
+					"width": 3456,
+					"height": 4320
+				},
+				"url": "https://images.unsplash.com/photo-1551739440-5dd934d3a94a",
+				"width": 3456,
+				"height": 4320,
+				"edit": {
+					"zoom": 1,
+					"crop": {
+						"x": 0,
+						"y": 0
+					},
+					"background": "transparent"
+				},
+				"alt": "hit",
+				"credits": null,
+				"__TYPE__": "ImageContent",
+				"thumbnails": {}
+			},
+			"icon": {
+				"__TYPE__": "FieldContent",
+				"value": "ph:aperture",
+				"type": "Select"
+			},
+			"subheading": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading3",
+						"content": {
+							"text": "Character"
+						}
+					}
+				]
+			},
+			"body": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Fugiat et nostrud ullamco aute esse sunt do. Dolore sit laborum consectetur sint aute ipsum dolore. Veniam proident culpa ad."
+						}
+					}
+				]
+			},
+			"cta": {
+				"__TYPE__": "LinkContent",
+				"key": "0f2e6b3c-8074-45b2-84ae-f8f78a2fdc68",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "http://twitter.com",
+					"text": "Download now"
+				}
+			}
+		},
+		"items": []
 	}
 ]

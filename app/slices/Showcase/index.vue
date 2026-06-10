@@ -5,18 +5,21 @@ defineProps(getSliceComponentProps<Content.ShowcaseSlice>());
 </script>
 
 <template>
-  <section
-    :data-slice-type="slice.slice_type"
-    :data-slice-variation="slice.variation"
-  >
-    Placeholder component for showcase (variation: {{ slice.variation }})
-    slices.
+  <section :data-slice-type="slice.slice_type" :data-slice-variation="slice.variation">
+    <heading class="text-balance text-center text-5xl font-medium md:text-7xl">
+      <PrismicRichText :field="slice.primary.heading" />
+    </heading>
+    <article>
+      <PrismicImage :field="slice.primary.image" />
 
-    <br />
-    <strong>You can edit this slice directly in your code editor.</strong>
-    <!--
-	💡 Use the Prismic MCP server with your code editor
-	📚 Docs: https://prismic.io/docs/ai#code-with-prismics-mcp-server
--->
+      <!-- {{ slice.primary.icon }} -->
+      <div>
+        <PrismicRichText :field="slice.primary.subheading" />
+        <div class="">
+          <PrismicRichText :field="slice.primary.body" />
+        </div>
+        <PrismicLink :field="slice.primary.cta" class="buttonLink mt-6" />
+      </div>
+    </article>
   </section>
 </template>
