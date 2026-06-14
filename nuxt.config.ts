@@ -48,6 +48,10 @@ export default defineNuxtConfig({
           type: "page",
           path: "/:uid",
         },
+        {
+          type: "case_study",
+          path: "/case-study/:uid",
+        },
       ],
     },
   },

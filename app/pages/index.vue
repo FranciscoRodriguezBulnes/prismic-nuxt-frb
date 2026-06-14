@@ -3,7 +3,14 @@ import { asText, asImageSrc } from "@prismicio/client";
 import { components } from "~/slices";
 
 const { client } = usePrismic();
-const { data: page } = await useAsyncData("index", () => client.getByUID("page", "home"));
+const { data: page } = await useAsyncData("index", () => client.getByUID("page", "home",{
+  fetchLinks:[
+    "case_study.company",
+    "case_study.description",
+    "case_study.cover",
+
+  ]
+}));
 
 // useHead({
 //   title: asText(page.value?.data.title),

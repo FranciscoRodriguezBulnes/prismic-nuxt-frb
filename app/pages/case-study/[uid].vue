@@ -1,18 +1,10 @@
 <script setup lang="ts">
-import { asText, asImageSrc } from "@prismicio/client";
+import { asImageSrc } from "@prismicio/client";
 import { components } from "~/slices";
 
-const { client } = usePrismic();
 const route = useRoute();
-const { data: page } = await useAsyncData(route.params.uid as string, () =>
-  client.getByUID("page", route.params.uid as string, {
-    fetchLinks: [],
-  }),
-);
-
-// useHead({
-//   title: asText(page.value?.data.title)
-// })
+const { client } = usePrismic();
+const { data: page } = await useAsyncData(`[case_study-uid-${route.params.uid}]`, () => client.getByUID("case_study", route.params.uid as string));
 
 useSeoMeta({
   title: page.value?.data.meta_title,
