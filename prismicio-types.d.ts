@@ -602,6 +602,21 @@ type HeroSliceVariation = HeroSliceDefault;
 export type HeroSlice = prismic.SharedSlice<"hero", HeroSliceVariation>;
 
 /**
+ * Item in *Integrations → Default → Primary → Integration*
+ */
+export interface IntegrationsSliceDefaultPrimaryIntegrationItem {
+  /**
+   * Icon ID field in *Integrations → Default → Primary → Integration*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: simple-icons-prismic
+   * - **API ID Path**: integrations.default.primary.integration[].icon_id
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  icon_id: prismic.KeyTextField;
+}
+
+/**
  * Primary content in *Integrations → Default → Primary*
  */
 export interface IntegrationsSliceDefaultPrimary {
@@ -614,6 +629,28 @@ export interface IntegrationsSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/fields/rich-text
    */
   heading: prismic.RichTextField;
+
+  /**
+   * Body field in *Integrations → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: integrations.default.primary.body
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  body: prismic.RichTextField;
+
+  /**
+   * Integration field in *Integrations → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: integrations.default.primary.integration[]
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  integration: prismic.GroupField<
+    Simplify<IntegrationsSliceDefaultPrimaryIntegrationItem>
+  >;
 }
 
 /**
@@ -909,6 +946,7 @@ declare module "@prismicio/client" {
       HeroSliceVariation,
       HeroSliceDefault,
       IntegrationsSlice,
+      IntegrationsSliceDefaultPrimaryIntegrationItem,
       IntegrationsSliceDefaultPrimary,
       IntegrationsSliceVariation,
       IntegrationsSliceDefault,

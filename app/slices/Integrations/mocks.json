@@ -9,8 +9,106 @@
 					{
 						"type": "heading2",
 						"content": {
-							"text": "Completely"
-						}
+							"text": "Integrations galore.",
+							"spans": []
+						},
+						"direction": "ltr"
+					}
+				]
+			},
+			"body": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "The integrations your team needs to be productive at scale with no impact on your burn rate.",
+							"spans": []
+						},
+						"direction": "ltr"
+					}
+				]
+			},
+			"integration": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"icon_id",
+								{
+									"__TYPE__": "FieldContent",
+									"type": "Text",
+									"value": "simple-icons:cloudflare"
+								}
+							]
+						]
+					},
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"icon_id",
+								{
+									"__TYPE__": "FieldContent",
+									"type": "Text",
+									"value": "simple-icons:digitalocean"
+								}
+							]
+						]
+					},
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"icon_id",
+								{
+									"__TYPE__": "FieldContent",
+									"type": "Text",
+									"value": "simple-icons:prismic"
+								}
+							]
+						]
+					},
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"icon_id",
+								{
+									"__TYPE__": "FieldContent",
+									"type": "Text",
+									"value": "simple-icons:nuxt"
+								}
+							]
+						]
+					},
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"icon_id",
+								{
+									"__TYPE__": "FieldContent",
+									"type": "Text",
+									"value": "simple-icons:flydotio"
+								}
+							]
+						]
+					},
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"icon_id",
+								{
+									"__TYPE__": "FieldContent",
+									"type": "Text",
+									"value": "simple-icons:apachecordova"
+								}
+							]
+						]
 					}
 				]
 			}

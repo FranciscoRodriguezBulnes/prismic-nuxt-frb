@@ -20,6 +20,31 @@
             "allowTargetBlank": true,
             "single": "heading2"
           }
+        },
+        "body": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Body",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,strong,em"
+          }
+        },
+        "integration": {
+          "type": "Group",
+          "config": {
+            "label": "Integration",
+            "repeat": true,
+            "fields": {
+              "icon_id": {
+                "type": "Text",
+                "config": {
+                  "label": "Icon ID",
+                  "placeholder": "simple-icons-prismic"
+                }
+              }
+            }
+          }
         }
       },
       "items": {}
