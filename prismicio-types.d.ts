@@ -5,33 +5,67 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
 type PickContentRelationshipFieldData<
-  TRelationship extends prismic.CustomTypeModelFetchCustomTypeLevel1 | prismic.CustomTypeModelFetchCustomTypeLevel2 | prismic.CustomTypeModelFetchGroupLevel1 | prismic.CustomTypeModelFetchGroupLevel2,
-  TData extends Record<string, prismic.AnyRegularField | prismic.GroupField | prismic.NestedGroupField | prismic.SliceZone>,
+  TRelationship extends
+    | prismic.CustomTypeModelFetchCustomTypeLevel1
+    | prismic.CustomTypeModelFetchCustomTypeLevel2
+    | prismic.CustomTypeModelFetchGroupLevel1
+    | prismic.CustomTypeModelFetchGroupLevel2,
+  TData extends Record<
+    string,
+    | prismic.AnyRegularField
+    | prismic.GroupField
+    | prismic.NestedGroupField
+    | prismic.SliceZone
+  >,
   TLang extends string,
 > =
   // Content relationship fields
   {
-    [TSubRelationship in Extract<TRelationship["fields"][number], prismic.CustomTypeModelFetchContentRelationshipLevel1> as TSubRelationship["id"]]: ContentRelationshipFieldWithData<
+    [TSubRelationship in Extract<
+      TRelationship["fields"][number],
+      prismic.CustomTypeModelFetchContentRelationshipLevel1
+    > as TSubRelationship["id"]]: ContentRelationshipFieldWithData<
       TSubRelationship["customtypes"],
       TLang
     >;
-  } & { // Group
+  } & // Group
+  {
     [TGroup in Extract<
       TRelationship["fields"][number],
-      prismic.CustomTypeModelFetchGroupLevel1 | prismic.CustomTypeModelFetchGroupLevel2
-    > as TGroup["id"]]: TData[TGroup["id"]] extends prismic.GroupField<infer TGroupData> ? prismic.GroupField<PickContentRelationshipFieldData<TGroup, TGroupData, TLang>> : never;
-  } & { // Other fields
-    [TFieldKey in Extract<TRelationship["fields"][number], string>]: TFieldKey extends keyof TData ? TData[TFieldKey] : never;
+      | prismic.CustomTypeModelFetchGroupLevel1
+      | prismic.CustomTypeModelFetchGroupLevel2
+    > as TGroup["id"]]: TData[TGroup["id"]] extends prismic.GroupField<
+      infer TGroupData
+    >
+      ? prismic.GroupField<
+          PickContentRelationshipFieldData<TGroup, TGroupData, TLang>
+        >
+      : never;
+  } & // Other fields
+  {
+    [TFieldKey in Extract<
+      TRelationship["fields"][number],
+      string
+    >]: TFieldKey extends keyof TData ? TData[TFieldKey] : never;
   };
 
 type ContentRelationshipFieldWithData<
-  TCustomType extends readonly (prismic.CustomTypeModelFetchCustomTypeLevel1 | string)[] | readonly (prismic.CustomTypeModelFetchCustomTypeLevel2 | string)[],
+  TCustomType extends
+    | readonly (prismic.CustomTypeModelFetchCustomTypeLevel1 | string)[]
+    | readonly (prismic.CustomTypeModelFetchCustomTypeLevel2 | string)[],
   TLang extends string = string,
 > = {
-  [ID in Exclude<TCustomType[number], string>["id"]]: prismic.ContentRelationshipField<
+  [ID in Exclude<
+    TCustomType[number],
+    string
+  >["id"]]: prismic.ContentRelationshipField<
     ID,
     TLang,
-    PickContentRelationshipFieldData<Extract<TCustomType[number], { id: ID }>, Extract<prismic.Content.AllDocumentTypes, { type: ID }>["data"], TLang>
+    PickContentRelationshipFieldData<
+      Extract<TCustomType[number], { id: ID }>,
+      Extract<prismic.Content.AllDocumentTypes, { type: ID }>["data"],
+      TLang
+    >
   >;
 }[Exclude<TCustomType[number], string>["id"]];
 
@@ -126,9 +160,20 @@ interface CaseStudyDocumentData {
  *
  * @typeParam Lang - Language API ID of the document.
  */
-export type CaseStudyDocument<Lang extends string = string> = prismic.PrismicDocumentWithUID<Simplify<CaseStudyDocumentData>, "case_study", Lang>;
+export type CaseStudyDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<CaseStudyDocumentData>,
+    "case_study",
+    Lang
+  >;
 
-type PageDocumentDataSlicesSlice = CaseStudiesSlice | ShowcaseSlice | BentoSlice | HeroSlice | RichTextSlice;
+type PageDocumentDataSlicesSlice =
+  | IntegrationsSlice
+  | CaseStudiesSlice
+  | ShowcaseSlice
+  | BentoSlice
+  | HeroSlice
+  | RichTextSlice;
 
 /**
  * Content for Page documents
@@ -197,7 +242,8 @@ interface PageDocumentData {
  *
  * @typeParam Lang - Language API ID of the document.
  */
-export type PageDocument<Lang extends string = string> = prismic.PrismicDocumentWithUID<Simplify<PageDocumentData>, "page", Lang>;
+export type PageDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<Simplify<PageDocumentData>, "page", Lang>;
 
 /**
  * Content for Settings documents
@@ -245,7 +291,15 @@ interface SettingsDocumentData {
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/fields/link
    */
-  navigation: prismic.Repeatable<prismic.LinkField<string, string, unknown, prismic.FieldState, "Link" | "Button">>;
+  navigation: prismic.Repeatable<
+    prismic.LinkField<
+      string,
+      string,
+      unknown,
+      prismic.FieldState,
+      "Link" | "Button"
+    >
+  >;
 }
 
 /**
@@ -257,9 +311,17 @@ interface SettingsDocumentData {
  *
  * @typeParam Lang - Language API ID of the document.
  */
-export type SettingsDocument<Lang extends string = string> = prismic.PrismicDocumentWithoutUID<Simplify<SettingsDocumentData>, "settings", Lang>;
+export type SettingsDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<SettingsDocumentData>,
+    "settings",
+    Lang
+  >;
 
-export type AllDocumentTypes = CaseStudyDocument | PageDocument | SettingsDocument;
+export type AllDocumentTypes =
+  | CaseStudyDocument
+  | PageDocument
+  | SettingsDocument;
 
 /**
  * Item in *Bento → Default → Primary → Bento*
@@ -349,7 +411,11 @@ export interface BentoSliceDefaultPrimary {
  * - **Description**: Default
  * - **Documentation**: https://prismic.io/docs/slices
  */
-export type BentoSliceDefault = prismic.SharedSliceVariation<"default", Simplify<BentoSliceDefaultPrimary>, never>;
+export type BentoSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<BentoSliceDefaultPrimary>,
+  never
+>;
 
 /**
  * Slice variation for *Bento*
@@ -381,7 +447,14 @@ export interface CaseStudiesSliceDefaultPrimaryCaseStudiesItem {
     [
       {
         id: "case_study";
-        fields: ["company", "cover", "description", "meta_title", "meta_description", "meta_image"];
+        fields: [
+          "company",
+          "cover",
+          "description",
+          "meta_title",
+          "meta_description",
+          "meta_image",
+        ];
       },
     ]
   >;
@@ -419,7 +492,9 @@ export interface CaseStudiesSliceDefaultPrimary {
    * - **API ID Path**: case_studies.default.primary.case_studies[]
    * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
    */
-  case_studies: prismic.GroupField<Simplify<CaseStudiesSliceDefaultPrimaryCaseStudiesItem>>;
+  case_studies: prismic.GroupField<
+    Simplify<CaseStudiesSliceDefaultPrimaryCaseStudiesItem>
+  >;
 }
 
 /**
@@ -429,7 +504,11 @@ export interface CaseStudiesSliceDefaultPrimary {
  * - **Description**: Default
  * - **Documentation**: https://prismic.io/docs/slices
  */
-export type CaseStudiesSliceDefault = prismic.SharedSliceVariation<"default", Simplify<CaseStudiesSliceDefaultPrimary>, never>;
+export type CaseStudiesSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<CaseStudiesSliceDefaultPrimary>,
+  never
+>;
 
 /**
  * Slice variation for *CaseStudies*
@@ -443,7 +522,10 @@ type CaseStudiesSliceVariation = CaseStudiesSliceDefault;
  * - **Description**: CaseStudies
  * - **Documentation**: https://prismic.io/docs/slices
  */
-export type CaseStudiesSlice = prismic.SharedSlice<"case_studies", CaseStudiesSliceVariation>;
+export type CaseStudiesSlice = prismic.SharedSlice<
+  "case_studies",
+  CaseStudiesSliceVariation
+>;
 
 /**
  * Primary content in *Hero → Default → Primary*
@@ -477,7 +559,9 @@ export interface HeroSliceDefaultPrimary {
    * - **API ID Path**: hero.default.primary.ctas
    * - **Documentation**: https://prismic.io/docs/fields/link
    */
-  ctas: prismic.Repeatable<prismic.LinkField<string, string, unknown, prismic.FieldState, never>>;
+  ctas: prismic.Repeatable<
+    prismic.LinkField<string, string, unknown, prismic.FieldState, never>
+  >;
 
   /**
    * Image field in *Hero → Default → Primary*
@@ -497,7 +581,11 @@ export interface HeroSliceDefaultPrimary {
  * - **Description**: Default
  * - **Documentation**: https://prismic.io/docs/slices
  */
-export type HeroSliceDefault = prismic.SharedSliceVariation<"default", Simplify<HeroSliceDefaultPrimary>, never>;
+export type HeroSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<HeroSliceDefaultPrimary>,
+  never
+>;
 
 /**
  * Slice variation for *Hero*
@@ -512,6 +600,51 @@ type HeroSliceVariation = HeroSliceDefault;
  * - **Documentation**: https://prismic.io/docs/slices
  */
 export type HeroSlice = prismic.SharedSlice<"hero", HeroSliceVariation>;
+
+/**
+ * Primary content in *Integrations → Default → Primary*
+ */
+export interface IntegrationsSliceDefaultPrimary {
+  /**
+   * Heading field in *Integrations → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: integrations.default.primary.heading
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  heading: prismic.RichTextField;
+}
+
+/**
+ * Default variation for Integrations Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type IntegrationsSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<IntegrationsSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Integrations*
+ */
+type IntegrationsSliceVariation = IntegrationsSliceDefault;
+
+/**
+ * Integrations Shared Slice
+ *
+ * - **API ID**: `integrations`
+ * - **Description**: Integrations
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type IntegrationsSlice = prismic.SharedSlice<
+  "integrations",
+  IntegrationsSliceVariation
+>;
 
 /**
  * Primary content in *RichText → Default → Primary*
@@ -535,7 +668,11 @@ export interface RichTextSliceDefaultPrimary {
  * - **Description**: RichText
  * - **Documentation**: https://prismic.io/docs/slices
  */
-export type RichTextSliceDefault = prismic.SharedSliceVariation<"default", Simplify<RichTextSliceDefaultPrimary>, never>;
+export type RichTextSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<RichTextSliceDefaultPrimary>,
+  never
+>;
 
 /**
  * Slice variation for *RichText*
@@ -549,7 +686,10 @@ type RichTextSliceVariation = RichTextSliceDefault;
  * - **Description**: RichText
  * - **Documentation**: https://prismic.io/docs/slices
  */
-export type RichTextSlice = prismic.SharedSlice<"rich_text", RichTextSliceVariation>;
+export type RichTextSlice = prismic.SharedSlice<
+  "rich_text",
+  RichTextSliceVariation
+>;
 
 /**
  * Primary content in *Showcase → Default → Primary*
@@ -623,7 +763,11 @@ export interface ShowcaseSliceDefaultPrimary {
  * - **Description**: Default
  * - **Documentation**: https://prismic.io/docs/slices
  */
-export type ShowcaseSliceDefault = prismic.SharedSliceVariation<"default", Simplify<ShowcaseSliceDefaultPrimary>, never>;
+export type ShowcaseSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ShowcaseSliceDefaultPrimary>,
+  never
+>;
 
 /**
  * Primary content in *Showcase → Reversed → Primary*
@@ -697,7 +841,11 @@ export interface ShowcaseSliceReversedPrimary {
  * - **Description**: Default
  * - **Documentation**: https://prismic.io/docs/slices
  */
-export type ShowcaseSliceReversed = prismic.SharedSliceVariation<"reversed", Simplify<ShowcaseSliceReversedPrimary>, never>;
+export type ShowcaseSliceReversed = prismic.SharedSliceVariation<
+  "reversed",
+  Simplify<ShowcaseSliceReversedPrimary>,
+  never
+>;
 
 /**
  * Slice variation for *Showcase*
@@ -711,15 +859,24 @@ type ShowcaseSliceVariation = ShowcaseSliceDefault | ShowcaseSliceReversed;
  * - **Description**: Showcase
  * - **Documentation**: https://prismic.io/docs/slices
  */
-export type ShowcaseSlice = prismic.SharedSlice<"showcase", ShowcaseSliceVariation>;
+export type ShowcaseSlice = prismic.SharedSlice<
+  "showcase",
+  ShowcaseSliceVariation
+>;
 
 declare module "@prismicio/client" {
   interface CreateClient {
-    (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
+    (
+      repositoryNameOrEndpoint: string,
+      options?: prismic.ClientConfig,
+    ): prismic.Client<AllDocumentTypes>;
   }
 
   interface CreateWriteClient {
-    (repositoryNameOrEndpoint: string, options: prismic.WriteClientConfig): prismic.WriteClient<AllDocumentTypes>;
+    (
+      repositoryNameOrEndpoint: string,
+      options: prismic.WriteClientConfig,
+    ): prismic.WriteClient<AllDocumentTypes>;
   }
 
   interface CreateMigration {
@@ -751,6 +908,10 @@ declare module "@prismicio/client" {
       HeroSliceDefaultPrimary,
       HeroSliceVariation,
       HeroSliceDefault,
+      IntegrationsSlice,
+      IntegrationsSliceDefaultPrimary,
+      IntegrationsSliceVariation,
+      IntegrationsSliceDefault,
       RichTextSlice,
       RichTextSliceDefaultPrimary,
       RichTextSliceVariation,
