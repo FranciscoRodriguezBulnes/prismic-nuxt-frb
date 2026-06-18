@@ -1,0 +1,46 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"heading": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading2",
+						"content": {
+							"text": "Effortless motion, built with precision",
+							"spans": []
+						},
+						"direction": "ltr"
+					}
+				]
+			},
+			"ctas": {
+				"__TYPE__": "RepeatableContent",
+				"type": "Link",
+				"value": [
+					{
+						"key": "3ac283e8-c23f-46c7-b826-56253c7df5e0",
+						"__TYPE__": "LinkContent",
+						"value": {
+							"__TYPE__": "ExternalLink",
+							"url": "https://prismic.io",
+							"text": "View GitHub "
+						}
+					},
+					{
+						"__TYPE__": "LinkContent",
+						"key": "b1fd8e5e-b5e1-43a5-9515-efa2ed90d521",
+						"value": {
+							"__TYPE__": "ExternalLink",
+							"url": "marca.com",
+							"text": "Sign Up"
+						}
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]

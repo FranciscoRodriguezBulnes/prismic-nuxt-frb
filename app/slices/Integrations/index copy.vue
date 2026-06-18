@@ -100,9 +100,9 @@ onUnmounted(() => {
         <PrismicRichText :field="slice.primary.heading" />
       </h2>
 
-      <p class="mx-auto mt-6 max-w-md text-balance text-center text-gray-300">
-        < :field="slice.primary.body" />
-      </p>
+      <body class="mx-auto mt-6 max-w-md text-balance text-center text-gray-300">
+        <PrismicRichText :field="slice.primary.body" />
+      </body>
       <div class="mt-20 flex flex-col items-center md:flex-row">
         <template v-for="(integration, index) in integrations" :key="integration">
           <template v-if="index === Math.floor(integrations.length / 2)">
