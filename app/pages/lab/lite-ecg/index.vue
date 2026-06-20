@@ -178,7 +178,11 @@ const toggle = (index: number) => {
       </div>
     </div>
 
+    <p>This tool is intended for educational and triage support purposes only. It does not provide medical diagnosis and must not replace clinical judgment or professional medical evaluation.</p>
   </section>
+
+ 
+
 </template>
 
 <style scoped>
